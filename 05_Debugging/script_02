@@ -1,0 +1,25 @@
+set logging overwrite on
+set logging file gdb.output_02
+set logging on
+b 22
+b 24
+b 25
+run -100 100 3
+printf "@@@%d %d %d\n", M, N, S
+continue
+set $num = (N-1-M)/S +1
+set $k = 1
+while ($k<$num)
+    if ($k >= 28) && ($k <=35)
+        printf "@@@%d\n", i
+    end
+    set $k++
+    continue
+end
+if ((N-1)>=28) && ((N-1)<=35)
+    printf "@@@%d\n", N-1
+
+end
+continue
+set logging off
+quit
