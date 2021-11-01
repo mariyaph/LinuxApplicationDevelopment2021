@@ -1,0 +1,33 @@
+cp testfile infile
+strace -P infile -eopenat -e fault=openat:error=ENOENT ./move infile outfile
+if [ $? -eq 2 ] && [ -f infile ]; then echo ok; else echo not ok; fi
+echo ""
+
+cp testfile infile
+strace -P outfile -e fault=openat:error=EPERM ./move infile outfile
+if [ $? -eq 1 ] && [ -f infile ]; then echo ok; else echo not ok; fi
+echo ""
+
+cp testfile infile
+strace -P infile -eread -e fault=read:error=EPERM ./move infile outfile
+if [ $? -eq 1 ] && [ -f infile ] && [ ! -f outfile ]; then echo ok; else echo not ok; fi
+echo ""
+
+cp testfile infile
+strace -ewrite -e fault=write:error=EBADF:when=1 ./move infile outfile
+if [ $? -eq 9 ] && [ -f infile ] && [ ! -f outfile ]; then echo ok; else echo not ok; fi
+echo ""
+
+cp testfile infile
+strace -P infile -eclose -e fault=close:error=EBADF ./move infile outfile
+if [ $? -eq 9 ] && [ -f infile ] && [ ! -f outfile ]; then echo ok; else echo not ok; fi
+echo ""
+
+cp testfile infile
+strace  -eclose -e fault=close:error=EBADF:when=3 ./move infile outfile
+if [ $? -eq 9 ] && [ -f infile ] && [ ! -f outfile ]; then echo ok; else echo not ok; fi
+echo ""
+
+cp testfile infile
+strace -P infile -eunlink -e fault=unlink:error=ENOENT ./move infile outfile
+if [ $? -eq 2 ] && [ -f infile ] && [ ! -f outfile ]; then echo ok; else echo not ok; fi
