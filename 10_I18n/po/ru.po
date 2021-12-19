@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FULL-PACKAGE-NAME VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 18:24+0300\n"
+"POT-Creation-Date: 2021-12-19 19:32+0300\n"
 "PO-Revision-Date: 2021-12-19 16:26+0300\n"
 "Last-Translator: Mariya <root@comp-core-i3-4030u-752d12>\n"
 "Language-Team: Russian <gnu@d07.ru>\n"
@@ -19,30 +19,30 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../prog.c:11
+#: ../prog.c:13
 #, c-format
-msgid "CHOOSE NUMBER FROM 0 TO 100\n"
-msgstr "Загадайте число от 0 до 100\n"
+msgid "Choose number from 1 to 100\n"
+msgstr "Загадайте число от 1 до 100\n"
 
-#: ../prog.c:17
+#: ../prog.c:16
 #, c-format
 msgid "Is the number greater than %d?\n"
 msgstr "Ваше число больше %d?\n"
 
-#: ../prog.c:19
+#: ../prog.c:18
 msgid "yes"
 msgstr "да"
 
-#: ../prog.c:21
+#: ../prog.c:19
 msgid "no"
 msgstr "нет"
 
-#: ../prog.c:24
+#: ../prog.c:20
 #, c-format
 msgid "Answer - yes or no\n"
 msgstr "Ответьте - да или нет\n"
 
-#: ../prog.c:26
+#: ../prog.c:22
 #, c-format
-msgid "OH, I KNOW... it's %d\n"
+msgid "Oh, I know... it's %d\n"
 msgstr "Оо, я знаю... вы загадали число %d\n"
