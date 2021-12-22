@@ -9,6 +9,7 @@ int main(void) {
     textdomain("prog");
     int a = 1 ,b = 100;
     int c;
+
     char ans[7];
     printf(_("Choose number from 1 to 100\n"));
     while (b - a > 0) {
