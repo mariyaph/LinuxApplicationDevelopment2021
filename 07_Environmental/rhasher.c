@@ -21,6 +21,7 @@ int main (void) {
 #ifndef FUN
    if ((nread = getline (&line, &n, stdin)) == -1) break;
 #else
+    free(line);
     if ((line = readline("")) == NULL) break;
 #endif
         if ((p1 = strtok (line," ")) == NULL) {
